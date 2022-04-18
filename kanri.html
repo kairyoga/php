@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>管理</title>
+<link href="style.css"  rel="stylesheet">
+</head>
+<body>
+<h1>管理メニュー</h1>
+
+  <p>閲覧したい情報を選んでください<br>
+<table>
+  <form method="POST" action="cateiti.php">
+    <tr><td>カテゴリ一覧を表示　</td><td></td><td><input type="submit" value="表示する"></td></tr>
+  </form><form method="POST" action="kaiiti.php">
+    <tr><td>会員一覧を表示　</td><td></td><td><input type="submit" value="表示する"></td></tr>
+  </form><form method="POST" action="dtaiiti.php">
+    <tr><td>タイトルごとにDVDの一覧を表示（*ですべて表示）　</td><td><input type="text" name="taitoru"></td>　<td><input type="submit" name="tai" value="表示する"></td></tr>
+  </form><form method="POST" action="dkaiiti.php">
+    <tr><td>貸出中のDVDと会員情報の一覧を表示　</td><td></td><td><input type="submit" name="kasidasi"  value="表示する"></td></tr>
+  </form><form method="POST" action="nendvditi.php">
+    <tr><td>年を指定して、DVDごとの貸出件数を表示（西暦2000年以上）　</td><td><input type="number" name="nendvd"></td><td><input type="submit" value="表示する"></td></tr>
+  </form><form method="POST" action="nenkaiuri.php">
+    <tr><td>年を指定して、会員ごとの売り上げを表示（西暦2000年以上）　</td><td><input type="number" name="nenkai"></td><td><input type="submit" value="表示する"></td></tr>
+  </form><form method="POST" action="syueniti.php">
+      <tr><td>一週間を超えて延滞している会員の一覧を表示　</td><td></td><td><input type="submit" value="表示する"></td></tr>
+      </form>
+  </table>
+	</p>
+  <a href="menu.html" class=btn>メニューに戻る</a>
+
+</body>
+</html>

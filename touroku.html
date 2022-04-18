@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="stylesheet" href="touroku.css">
+<meta charset="utf-8">
+<title>レコード追加</title>
+<link href="style.css"  rel="stylesheet">
+</head>
+<body>
+  <div>
+<!--入力フォームを作る-->
+<form method="POST" action="touroku.php">
+<ul>
+  <li><label>氏名：
+    <input type="text" name="name" placeholder="氏名">
+  </label>
+</li>
+<li><label>住所：
+  <input type="text" name="address" placeholder="住所">
+</label>
+</li>
+<li><label>電話番号：
+  <input type="number" name="tell" placeholder="半角数字">
+</label>
+<li><label>生年月日：
+  <input type="text" name="birth" placeholder="生年月日">
+</label>
+
+<li><label>メールアドレス：
+  <input type="text" name="mail" placeholder="メールアドレス">
+</label>
+</li>
+<li><label>パスワード：
+  <input type="text" name="pw" placeholder="パスワード">
+</label>
+</li>
+
+<li><input type="submit" value="登録する"></li>
+</ul>
+</form>
+</div>
+  <a href="menu.html" class=btn>メニューに戻る</a>
+</body>
+</html>

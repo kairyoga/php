@@ -1,0 +1,66 @@
+<?php
+  // データベースユーザ
+  $user = 'root';
+  $password = 'root';
+  // 利用するデータベース
+  $dbName = 'rentaldb';
+  // MySQLサーバ
+  $host = 'localhost:3306';
+// MySQLのDSN文字列
+$dsn = "mysql:host={$host};dbname={$dbName};charset=utf8";
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>カテゴリ一覧</title>
+</head>
+<body>
+<div>
+  <?php
+  //MySQLデータベースに接続する
+  try {
+    $pdo = new PDO($dsn, $user, $password);
+    // プリペアドステートメントのエミュレーションを無効にする
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    // 例外がスローされる設定にする
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // SQL文を作る（全レコード）
+    $sql = "SELECT * FROM category";
+
+    // プリペアドステートメントを作る
+    $stm = $pdo->prepare($sql);
+    // SQL文を実行する
+    $stm->execute();
+    // 結果の取得（連想配列で返す）
+    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+    // テーブルのタイトル行
+    echo "<table>";
+    echo "<thead><tr>";
+    echo "<th>", "カテゴリー番号", "</th>";
+    echo "<th>", "カテゴリー名", "</th>";
+
+    echo "</tr></thead>";
+    // 値を取り出して行に表示する
+    echo "<tbody>";
+    foreach ($result as $row){
+      // １行ずつテーブルに入れる
+      echo "<tr>";
+      echo "<td>", $row['cat_id'], "</td>";
+      echo "<td>", $row['cat_name'], "</td>";
+
+      echo "</tr>";
+    }
+    echo "</tbody>";
+    echo "</table>";
+  } catch (Exception $e) {
+    echo '<span class="error">エラーがありました。</span><br>';
+    echo $e->getMessage();
+    exit();
+  }
+  ?>
+</div>
+<a href="kanri.html" class=btn>管理用ページに戻る</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>入荷</title>
+<link href="style.css"  rel="stylesheet">
+</head>
+<body>
+<h1>入荷</h1>
+<form method="POST" action="nyuka.php">
+<ul>
+  <li><label>タイトル：<input type="text" name="taitoru"></label></li>
+  <li><label>カテゴリ番号：<select name="kateban">
+<option value="ca1">国内アニメ</option>
+<option value="ca2">国内映画</option>
+<option value="ca3">国内ドラマ</option>
+<option value="ca4">国外アニメ</option>
+<option value="ca5">国外映画</option>
+<option value="ca6">国外ドラマ</option>
+</select>
+
+  <li><label>主演：<input type="text" name="syuen"></label></li>
+  <li><label>監督：<input type="text" name="kantoku"></label></li>
+  <li><input type="submit" value="登録する"></li>
+</ul>
+</form>
+  <a href="menu.html" class=btn>メニューに戻る</a>
+</body>
+</html>

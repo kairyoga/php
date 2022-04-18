@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja" >
+  <head>
+    <meta charset="utf-8">
+    <title>照会画面</title>
+  </head>
+  <link href="style.css"  rel="stylesheet">
+    <h1>照会画面</h1>
+  <body>
+    <div class="return_textbox">
+      <table>
+        <form method="POST" action="syokai_Dno.php">
+        <tr><td>会員番号からレンタル中の商品を一覧　</td><td><input type="number" name="rid"></td>　<td><input type="submit" name="tai" value="表示する"></td></tr>
+      </form><form method="POST" action="syokai_Rno.php">
+        <tr><td>DVD番号からレンタル中の会員情報を表示　</td><td><input type="number" name="did"></td><td><input type="submit" name="member"value="表示する"></td></tr>
+      </form><form method="POST" action="syokai_Kno.php">
+        <tr><td>キーワードからレンタル中のDVDと会員情報の一覧を表示　</td><td><input type="text" name="taitoru"></td><td><input type="submit" name="d_name" value="表示する"></td></tr>
+      </form>
+    </table>
+    <a href="menu.html" class=btn>メニューに戻る</a>
+  </div>
+  </body>
+</html>
